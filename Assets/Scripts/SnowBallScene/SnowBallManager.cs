@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class SnowBallManager : MonoBehaviour
 {
 
-
     public GameObject player1;
     public GameObject player2;
+
+  //  public GameObject pausedMenu;
 
     public int P1Life;
     public int P2Life;
@@ -23,17 +24,36 @@ public class SnowBallManager : MonoBehaviour
 
     public AudioSource hurtSound;
 
+    GameObject pause;
+
     public string mainMenu;
     public string nextScene;
+
+   // public PauseMenu pazMenu;
 
 
     void Start()
     {
-
+    //  pazMenu =  GetComponent<PauseMenu>();
+     
     }
 
     void Update()
-    {
+    { 
+        //Debug.LogWarning("Test");
+
+
+
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //    pausedMenu.SetActive(true);
+        //    pazMenu.pausGame();
+        //    pausedMenu.SetActive(true);
+        //    if(pausedMenu.isActive  )
+        //    player1.SetActive(false);
+        //    player2.SetActive(false);   
+        //  };
+        
 
         if (P1Life <= 0)
         {
@@ -61,10 +81,10 @@ public class SnowBallManager : MonoBehaviour
                 SceneManager.LoadScene(nextScene);
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                SceneManager.LoadScene(mainMenu);
-            }
+            //    if (Input.GetKeyDown(KeyCode.Escape))
+            //    {
+            //       SceneManager.LoadScene(mainMenu);
+            //  }
         }
 
 
@@ -105,8 +125,6 @@ public class SnowBallManager : MonoBehaviour
         }
         hurtSound.Play();
     }
+
+
 }
-
-
-
-
